@@ -1,0 +1,13 @@
+key 42    POWER             WAKE
+key 59    VOLUME_DOWN       WAKE
+key 215   VOLUME_UP         WAKE
+key 28    CAMERA
+
+key 207   BACK              WAKE_DROPPED
+key 214   ENTER         	WAKE_DROPPED
+
+key 169   DPAD_CENTER       WAKE_DROPPED
+key 104   DPAD_DOWN         WAKE_DROPPED
+key 221   DPAD_UP           WAKE_DROPPED
+key 111   DPAD_LEFT         WAKE_DROPPED
+key 128   DPAD_RIGHT        WAKE_DROPPED

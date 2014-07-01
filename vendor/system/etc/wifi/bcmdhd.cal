@@ -1,0 +1,59 @@
+# 4330 B2 nvram
+# for Android4.0 referece design, 8810/8825
+# 2012.10.24, v1.0, *change default TX power: 11b=15,11g=13,11n=12 ,by zhip@broadcom.com
+#                      customer can modify nvram according to the real RF performance of their PCB
+#                   *WIFI BT COEX tune in lab
+
+
+tir2g=0x6b
+
+manfid=0x2d0
+prodid=0x0552
+vendid=0x14e4
+devid=0x4360
+boardtype=0x0552
+boardrev=0x11
+# boardflags: SP3T switch share with BT;
+boardflags=0x00080201
+nocrc=1
+xtalfreq=26000
+boardnum=22
+#macaddr=00:90:4c:c5:12:38
+macaddr=00:22:33:44:55:66
+ag0=255
+aa2g=1
+ccode=EU
+pa0b0=5501
+pa0b1=-641
+pa0b2=-163
+rssismf2g=0xa
+rssismc2g=0x3
+rssisav2g=0x7
+maxp2ga0=66
+ofdm2gpo=0x44444444
+mcs2gpo0=0x6666
+mcs2gpo1=0x6666
+sromrev=3
+il0macaddr=00:90:4c:c5:12:38
+wl0id=0x431b
+cckPwrOffset=5
+swctrlmap_2g=0x04040404,0x02020202,0x02020404,0x10202,0x1ff
+rfreg033=0x19
+rfreg033_cck=0x1f
+dacrate2g=160
+txalpfbyp2g=1
+bphyscale=17
+cckPwrIdxCorr=-15
+pacalidx2g=45
+txgaintbl=1
+sd_gpout=0
+sd_oobonly=1
+sd_level_trigger=1
+pacalath2g=180
+pacalidx2g1=55
+#muxenab=0x10
+
+# COEX tune, meet CMCC's requirement
+btc_params80=0
+btc_params8=0x7530
+btc_params43=0x6

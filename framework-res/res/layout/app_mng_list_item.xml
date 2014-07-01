@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/shw_list_item_bg" android:paddingLeft="1.0dip" android:paddingTop="1.0dip" android:paddingRight="1.0dip" android:paddingBottom="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView android:textColor="#ff000000" android:layout_gravity="center_vertical" android:id="@id/app_icon" android:layout_width="@dimen/app_icon_size" android:layout_height="@dimen/app_icon_size" android:layout_marginRight="11.0dip" android:scaleType="fitCenter" />
+        <TextView android:textAppearance="?textAppearanceMedium" android:textStyle="bold" android:textColor="#ff000000" android:ellipsize="marquee" android:layout_gravity="center_vertical" android:id="@id/app_name" android:layout_width="180.0dip" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textAppearance="?textAppearanceMedium" android:textColor="#ffff0000" android:gravity="right" android:layout_gravity="center_vertical" android:id="@id/app_size" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <CheckBox android:textSize="14.0dip" android:textColor="#ff000000" android:id="@id/Move2Sd_ChkBox_Id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/myApp_Move2Sd_ChkBox" android:layout_weight="1.0" />
+        <CheckBox android:textSize="14.0dip" android:textColor="#ff000000" android:id="@id/ClearData_ChkBox_Id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/myApp_ClearData_ChkBox" android:layout_weight="1.0" />
+        <CheckBox android:textSize="14.0dip" android:textColor="#ff000000" android:id="@id/Uninstall_ChkBox_Id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/myApp_Uninstall_ChkBox" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

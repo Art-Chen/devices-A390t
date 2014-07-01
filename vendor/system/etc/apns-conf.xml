@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- This file contains fake APNs that are necessary for the emulator
+     to talk to the network.  It should only be installed for SDK builds.
+
+     This file is not installed by the local Android.mk, it's installed using
+     a PRODUCT_COPY_FILES line in the sdk section of the toplevel Makefile.
+-->
+
+<!-- use empty string to specify no proxy or port -->
+<!-- This version must agree with that in apps/common/res/apns.xml -->
+<apns version="7">
+     <apn carrier="CMWAP"
+        mcc="460"
+        mnc="00"
+        apn="cmwap"
+        proxy="10.0.0.172"
+        port="80"
+        mmsproxy="10.0.0.172"
+        mmsport="80"
+        user=""
+        server=""
+        password=""
+        mmsc="http://mmsc.monternet.com"
+        type="default,mms,hipri,wap"
+    />
+    <apn carrier="CMWAP"
+        mcc="460"
+        mnc="02"
+        apn="cmwap"
+        proxy="10.0.0.172"
+        port="80"
+        mmsproxy="10.0.0.172"
+        mmsport="80"
+        user=""
+        server=""
+        password=""
+        mmsc="http://mmsc.monternet.com"
+        type="default,mms,hipri,wap"
+    />
+    <apn carrier="CMWAP"
+        mcc="460"
+        mnc="07"
+        apn="cmwap"
+        proxy="10.0.0.172"
+        port="80"
+        mmsproxy="10.0.0.172"
+        mmsport="80"
+        user=""
+        server=""
+        password=""
+        mmsc="http://mmsc.monternet.com"
+        type="default,mms,hipri,wap"
+    />
+
+     <apn carrier="CMMMS"
+        mcc="460"
+        mnc="00"
+        apn="cmwap"
+        proxy="10.0.0.172"
+        port="80"
+        mmsproxy="10.0.0.172"
+        mmsport="80"
+        user=""
+        server=""
+        password=""
+        mmsc="http://mmsc.monternet.com"
+        type="mms"
+    />
+    <apn carrier="CMMMS"
+        mcc="460"
+        mnc="02"
+        apn="cmwap"
+        proxy="10.0.0.172"
+        port="80"
+        mmsproxy="10.0.0.172"
+        mmsport="80"
+        user=""
+        server=""
+        password=""
+        mmsc="http://mmsc.monternet.com"
+        type="mms"
+    />
+    <apn carrier="CMMMS"
+        mcc="460"
+        mnc="07"
+        apn="cmwap"
+        proxy="10.0.0.172"
+        port="80"
+        mmsproxy="10.0.0.172"
+        mmsport="80"
+        user=""
+        server=""
+        password=""
+        mmsc="http://mmsc.monternet.com"
+        type="mms"
+     />
+
+
+    <apn carrier="China Unicom 2G WAP"
+        mcc="460"
+        mnc="01"
+        apn="uniwap"
+        proxy="10.0.0.172"
+        port="80"
+        mmsproxy="10.0.0.172"
+        mmsport="80"
+        user=""
+        server=""
+        password=""
+        mmsc="http://mmsc.myuni.com.cn"
+        type="default,mms,hipri"
+    />
+    <apn carrier="China Unicom 2G WAP"
+        mcc="460"
+        mnc="06"
+        apn="uniwap"
+        proxy="10.0.0.172"
+        port="80"
+        mmsproxy="10.0.0.172"
+        mmsport="80"
+        user=""
+        server=""
+        password=""
+        mmsc="http://mmsc.myuni.com.cn"
+        type="default,mms,hipri"
+    />
+    <apn carrier="CMNET"
+        mcc="460"
+        mnc="00"
+        apn="cmnet"
+        user=""
+        server=""
+        password=""
+        type="default,hipri"
+    />
+    <apn carrier="CMSUPL"
+        mcc="460"
+        mnc="00"
+        apn="cmnet"
+        user=""
+        server=""
+        password=""
+        type="supl"
+    />
+    <apn carrier="CMNET"
+        mcc="460"
+        mnc="02"
+        apn="cmnet"
+        user=""
+        server=""
+        password=""
+        type="default,hipri"
+    />
+    <apn carrier="CMSUPL"
+        mcc="460"
+        mnc="02"
+        apn="cmnet"
+        user=""
+        server=""
+        password=""
+        type="supl"
+    />
+     <apn carrier="CMNET"
+        mcc="460"
+        mnc="07"
+        apn="cmnet"
+        user=""
+        server=""
+        password=""
+        type="default,hipri"
+    />
+    <apn carrier="CMSUPL"
+        mcc="460"
+        mnc="07"
+        apn="cmnet"
+        user=""
+        server=""
+        password=""
+        type="supl"
+    />
+     <apn carrier="China Unicom 2G NET"
+        mcc="460"
+        mnc="01"
+        apn="uninet"
+        user=""
+        server=""
+        password=""
+        type="default,hipri"
+    />
+     <apn carrier="China Unicom 2G SUPL"
+        mcc="460"
+        mnc="01"
+        apn="uninet"
+        user=""
+        server=""
+        password=""
+        type="supl"
+    />
+     <apn carrier="China Unicom 2G NET"
+        mcc="460"
+        mnc="06"
+        apn="uninet"
+        user=""
+        server=""
+        password=""
+        type="default,hipri"
+    />
+     <apn carrier="China Unicom 2G SUPL"
+        mcc="460"
+        mnc="06"
+        apn="uninet"
+        user=""
+        server=""
+        password=""
+        type="supl"
+    />
+     <apn carrier="112NET For Test"
+        mcc="001"
+        mnc="01"
+        apn="cmnet"
+        user=""
+        server=""
+        password=""
+        type="default"
+    />
+    <apn carrier="CMCC DM"
+        mcc="460"
+        mnc="00"
+        apn="cmdm"
+        user=""
+        server=""
+        password=""
+        type="dm"
+    />
+    <apn carrier="CMCC DM"
+        mcc="460"
+        mnc="02"
+        apn="cmdm"
+        user=""
+        server=""
+        password=""
+        type="dm"
+    />
+    <apn carrier="CMCC DM"
+        mcc="460"
+        mnc="07"
+        apn="cmdm"
+        user=""
+        server=""
+        password=""
+        type="dm"
+    />
+</apns>

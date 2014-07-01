@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/LinerLayout_Top" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textAppearance="?textAppearanceMedium" android:textColor="#ff000000" android:layout_gravity="center_vertical" android:id="@id/myAppTip_Id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/myAppTip" android:layout_weight="1.0" />
+        <Button android:textColor="#ffffffff" android:id="@id/myApp_Start_Btn_Id" android:background="@drawable/shw_start" android:layout_width="64.0dip" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="4.0dip" android:text="@string/myApp_Start_Btn" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <ListView android:id="@id/myApp_List" android:layout_width="fill_parent" android:layout_height="wrap_content"
+          xmlns:android="http://schemas.android.com/apk/res/android" />
+    </LinearLayout>
+</LinearLayout>
