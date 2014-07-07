@@ -147,6 +147,91 @@
     return-void
 .end method
 
+.method constructor <init>(Lcom/android/server/am/BroadcastQueue;Landroid/content/Intent;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;IILjava/lang/String;Ljava/util/List;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;ZZZ)V
+    .locals 2
+    .parameter "_queue"
+    .parameter "_intent"
+    .parameter "_callerApp"
+    .parameter "_callerPackage"
+    .parameter "_callingPid"
+    .parameter "_callingUid"
+    .parameter "_requiredPermission"
+    .parameter "_receivers"
+    .parameter "_resultTo"
+    .parameter "_resultCode"
+    .parameter "_resultData"
+    .parameter "_resultExtras"
+    .parameter "_serialized"
+    .parameter "_sticky"
+    .parameter "_initialSticky"
+
+    .prologue
+    .line 170
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+
+    .line 171
+    iput-object p1, p0, Lcom/android/server/am/BroadcastRecord;->queue:Lcom/android/server/am/BroadcastQueue;
+
+    .line 172
+    iput-object p2, p0, Lcom/android/server/am/BroadcastRecord;->intent:Landroid/content/Intent;
+
+    .line 173
+    iput-object p3, p0, Lcom/android/server/am/BroadcastRecord;->callerApp:Lcom/android/server/am/ProcessRecord;
+
+    .line 174
+    iput-object p4, p0, Lcom/android/server/am/BroadcastRecord;->callerPackage:Ljava/lang/String;
+
+    .line 175
+    iput p5, p0, Lcom/android/server/am/BroadcastRecord;->callingPid:I
+
+    .line 176
+    iput p6, p0, Lcom/android/server/am/BroadcastRecord;->callingUid:I
+
+    .line 177
+    iput-object p7, p0, Lcom/android/server/am/BroadcastRecord;->requiredPermission:Ljava/lang/String;
+
+    .line 178
+    iput-object p8, p0, Lcom/android/server/am/BroadcastRecord;->receivers:Ljava/util/List;
+
+    .line 179
+    iput-object p9, p0, Lcom/android/server/am/BroadcastRecord;->resultTo:Landroid/content/IIntentReceiver;
+
+    .line 180
+    iput p10, p0, Lcom/android/server/am/BroadcastRecord;->resultCode:I
+
+    .line 181
+    iput-object p11, p0, Lcom/android/server/am/BroadcastRecord;->resultData:Ljava/lang/String;
+
+    .line 182
+    iput-object p12, p0, Lcom/android/server/am/BroadcastRecord;->resultExtras:Landroid/os/Bundle;
+
+    .line 183
+    iput-boolean p13, p0, Lcom/android/server/am/BroadcastRecord;->ordered:Z
+
+    .line 184
+    move/from16 v0, p14
+
+    iput-boolean v0, p0, Lcom/android/server/am/BroadcastRecord;->sticky:Z
+
+    .line 185
+    move/from16 v0, p15
+
+    iput-boolean v0, p0, Lcom/android/server/am/BroadcastRecord;->initialSticky:Z
+
+    .line 186
+    const/4 v1, 0x0
+
+    iput v1, p0, Lcom/android/server/am/BroadcastRecord;->nextReceiver:I
+
+    .line 187
+    const/4 v1, 0x0
+
+    iput v1, p0, Lcom/android/server/am/BroadcastRecord;->state:I
+
+    .line 188
+    return-void
+.end method
+
 
 # virtual methods
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V

@@ -128,11 +128,6 @@
 
 .field private mThemePackageNameForSystem:Ljava/lang/String;
 
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
 .field mUri:Landroid/net/Uri;
 
 .field private final mValue:Landroid/util/TypedValue;
@@ -287,6 +282,11 @@
     iput v0, p0, Landroid/content/res/AssetManager;->mDpi:I
 
     invoke-direct {p0}, Landroid/content/res/AssetManager;->init()V
+
+
+    const-string v0, "/system/framework/framework-res-yi.apk"
+
+    invoke-virtual {p0, v0}, Landroid/content/res/AssetManager;->addAssetPath(Ljava/lang/String;)I
 
     invoke-static {}, Landroid/content/ThemeDefine;->getIconPath()Ljava/util/HashMap;
 

@@ -837,6 +837,15 @@
     :goto_0
     sput v0, Lcom/android/server/am/ActivityManagerService;->MAX_RECENT_TASKS:I
 
+    sget-boolean v0, Landroid/os/Build;->IS_LOWMEM_VERSION:Z
+
+    if-eqz v0, :cond_chen_0
+
+    const/16 v0, 0x1f40
+
+    :goto_chen_0
+    sput v0, Lcom/android/server/am/ActivityManagerService;->KEY_DISPATCHING_TIMEOUT:I
+
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v0
@@ -945,6 +954,11 @@
     const/16 v0, 0x14
 
     goto :goto_0
+
+    :cond_chen_0
+    const/16 v0, 0x1388
+
+    goto/16 :goto_chen_0
 
     :array_0
     .array-data 0x8

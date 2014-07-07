@@ -481,20 +481,6 @@
 
     goto/16 :goto_0
 
-    .line 2012
-    :sswitch_15
-    iget-object v4, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v5, v4, Lcom/android/internal/telephony/CallManager;->mPreciseVideoCallStateRegistrants:Landroid/os/RegistrantList;
-
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v4, Landroid/os/AsyncResult;
-
-    invoke-virtual {v5, v4}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
     .line 2016
     :sswitch_16
     iget-object v4, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
@@ -593,7 +579,6 @@
         0x76 -> :sswitch_12
         0x77 -> :sswitch_13
         0xc8 -> :sswitch_14
-        0xc9 -> :sswitch_15
         0xca -> :sswitch_16
         0xcb -> :sswitch_17
         0xcc -> :sswitch_18

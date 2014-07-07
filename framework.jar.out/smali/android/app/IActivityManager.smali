@@ -227,13 +227,6 @@
 
 .field public static final SET_PROCESS_ADJ_TRANSACTION:I = 0x8d
 
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
-.field public static final SET_PERSISTENT_TRANSACTION:I = 0x8d
-
 .field public static final SET_PROCESS_FOREGROUND_TRANSACTION:I = 0x49
 
 .field public static final SET_PROCESS_LIMIT_TRANSACTION:I = 0x33

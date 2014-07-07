@@ -11088,13 +11088,13 @@
     return-wide v0
 .end method
 
-.method protected private paste(II)V
+.method protected paste(II)V
     .locals 10
     .parameter "min"
     .parameter "max"
 
     .prologue
-    .line 10455
+    .line 10179
     invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object v7
@@ -11107,20 +11107,20 @@
 
     check-cast v1, Landroid/content/ClipboardManager;
 
-    .line 10457
+    .line 10181
     .local v1, clipboard:Landroid/content/ClipboardManager;
     invoke-virtual {v1}, Landroid/content/ClipboardManager;->getPrimaryClip()Landroid/content/ClipData;
 
     move-result-object v0
 
-    .line 10458
+    .line 10182
     .local v0, clip:Landroid/content/ClipData;
     if-eqz v0, :cond_3
 
-    .line 10459
+    .line 10183
     const/4 v2, 0x0
 
-    .line 10460
+    .line 10184
     .local v2, didFirst:Z
     const/4 v3, 0x0
 
@@ -11132,7 +11132,7 @@
 
     if-ge v3, v7, :cond_2
 
-    .line 10461
+    .line 10185
     invoke-virtual {v0, v3}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
 
     move-result-object v7
@@ -11145,47 +11145,47 @@
 
     move-result-object v6
 
-    .line 10462
+    .line 10186
     .local v6, paste:Ljava/lang/CharSequence;
     if-eqz v6, :cond_0
 
-    .line 10463
+    .line 10187
     if-nez v2, :cond_1
 
-    .line 10464
+    .line 10188
     invoke-direct {p0, p1, p2, v6}, Landroid/widget/TextView;->prepareSpacesAroundPaste(IILjava/lang/CharSequence;)J
 
     move-result-wide v4
 
-    .line 10465
+    .line 10189
     .local v4, minMax:J
     invoke-static {v4, v5}, Landroid/widget/TextView;->extractRangeStartFromLong(J)I
 
     move-result p1
 
-    .line 10466
+    .line 10190
     invoke-static {v4, v5}, Landroid/widget/TextView;->extractRangeEndFromLong(J)I
 
     move-result p2
 
-    .line 10467
+    .line 10191
     iget-object v7, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
 
     check-cast v7, Landroid/text/Spannable;
 
     invoke-static {v7, p2}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 10468
+    .line 10192
     iget-object v7, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
 
     check-cast v7, Landroid/text/Editable;
 
     invoke-interface {v7, p1, p2, v6}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
 
-    .line 10469
+    .line 10193
     const/4 v2, 0x1
 
-    .line 10460
+    .line 10184
     .end local v4           #minMax:J
     :cond_0
     :goto_1
@@ -11193,7 +11193,7 @@
 
     goto :goto_0
 
-    .line 10471
+    .line 10195
     :cond_1
     iget-object v7, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
 
@@ -11207,7 +11207,7 @@
 
     invoke-interface {v7, v8, v9}, Landroid/text/Editable;->insert(ILjava/lang/CharSequence;)Landroid/text/Editable;
 
-    .line 10472
+    .line 10196
     iget-object v7, p0, Landroid/widget/TextView;->mText:Ljava/lang/CharSequence;
 
     check-cast v7, Landroid/text/Editable;
@@ -11220,17 +11220,17 @@
 
     goto :goto_1
 
-    .line 10476
+    .line 10200
     .end local v6           #paste:Ljava/lang/CharSequence;
     :cond_2
     invoke-direct {p0}, Landroid/widget/TextView;->stopSelectionActionMode()V
 
-    .line 10477
+    .line 10201
     const-wide/16 v7, 0x0
 
     sput-wide v7, Landroid/widget/TextView;->sLastCutOrCopyTime:J
 
-    .line 10479
+    .line 10203
     .end local v2           #didFirst:Z
     .end local v3           #i:I
     :cond_3
@@ -28144,7 +28144,7 @@
 
     .line 9340
     :sswitch_1
-    invoke-direct {p0, v1, v0}, Landroid/widget/TextView;->paste(II)V
+    invoke-virtual {p0, v1, v0}, Landroid/widget/TextView;->paste(II)V
 
     goto :goto_0
 

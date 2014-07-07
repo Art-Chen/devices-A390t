@@ -252,7 +252,7 @@
 
     .prologue
     .line 1646
-    invoke-static {}, Landroid/graphics/Canvas;->freeTextLayoutCachesJNI()V
+#    invoke-static {}, Landroid/graphics/Canvas;->freeTextLayoutCachesJNI()V
 
     .line 1647
     return-void

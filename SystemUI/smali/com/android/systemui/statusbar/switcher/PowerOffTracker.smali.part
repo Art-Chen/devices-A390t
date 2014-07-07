@@ -1,0 +1,43 @@
+.method protected toggleStateChange(Landroid/content/Context;)V
+    .locals 4
+    .parameter "context"
+
+    .prologue
+    .line 49
+    iget-object v2, p0, Lcom/android/systemui/statusbar/switcher/PowerOffTracker;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/switcher/PowerOffTracker;->collapse(Landroid/content/Context;)V
+
+    .line 51
+    iget-object v2, p0, Lcom/android/systemui/statusbar/switcher/PowerOffTracker;->mContext:Landroid/content/Context;
+
+    const/4 v3, 0x1
+
+    invoke-static {v2, v3}, Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
+
+    :goto_0
+    invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/switcher/PowerOffTracker;->getActualState(Landroid/content/Context;)I
+
+    move-result v2
+
+    int-to-byte v1, v2
+
+    .line 57
+    .local v1, state:B
+    invoke-static {p1}, Lcom/android/systemui/UBCManager;->getDefault(Landroid/content/Context;)Lcom/android/systemui/UBCManager;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Lcom/android/systemui/UBCManager;->submitSwitcherClick(B)V
+
+    .line 58
+    return-void
+
+    .line 53
+    .end local v1           #state:B
+    :catch_0
+    move-exception v2
+
+    goto :goto_0
+.end method
+

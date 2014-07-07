@@ -255,17 +255,6 @@
 
     .line 323
     :cond_1
-    const-string/jumbo v2, "video_Call_Flag"
-
-    const/4 v3, 0x0
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v12, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 324
     if-eqz p0, :cond_2
 
     .line 325
@@ -567,7 +556,6 @@
     .parameter "start"
     .parameter "duration"
     .parameter "phoneId"
-    .parameter "videoCallFlag"
 
     .prologue
     .line 398
@@ -656,15 +644,6 @@
     const-string/jumbo v2, "phoneid"
 
     invoke-static/range {p8 .. p8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v12, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 422
-    const-string/jumbo v2, "video_Call_Flag"
-
-    invoke-static/range {p9 .. p9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
@@ -1087,15 +1066,6 @@
 
     invoke-virtual {v12, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 527
-    const-string/jumbo v2, "video_Call_Flag"
-
-    invoke-static/range {p9 .. p9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v12, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
     .line 528
     const-string v2, "geocoded_location"
 
@@ -1439,8 +1409,7 @@
 .method public static getLastOutgoingCall(Landroid/content/Context;I)Ljava/lang/String;
     .locals 7
     .parameter "context"
-    .parameter "type"
-
+    
     .prologue
     .line 598
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1466,23 +1435,7 @@
 
     aput-object v4, v2, v3
 
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "type = 2 AND video_Call_Flag = "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
+    const-string/jumbo v3, "type = 2"
 
     const/4 v4, 0x0
 

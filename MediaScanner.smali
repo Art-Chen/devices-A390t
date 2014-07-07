@@ -1223,13 +1223,13 @@
     return-object v0
 .end method
 
-.method static synthetic access$1400(Landroid/media/MediaScanner;)Landroid/net/Uri;
+.method static synthetic access$1400(Landroid/media/MediaScanner;)Landroid/media/MediaUpdater;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 107
-    iget-object v0, p0, Landroid/media/MediaScanner;->mVideoUri:Landroid/net/Uri;
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mMediaUpdater:Landroid/media/MediaUpdater;
 
     return-object v0
 .end method
@@ -1239,8 +1239,8 @@
     .parameter "x0"
 
     .prologue
-    .line 107
-    iget-object v0, p0, Landroid/media/MediaScanner;->mImagesUri:Landroid/net/Uri;
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mVideoUri:Landroid/net/Uri;
 
     return-object v0
 .end method
@@ -1250,19 +1250,19 @@
     .parameter "x0"
 
     .prologue
-    .line 107
-    iget-object v0, p0, Landroid/media/MediaScanner;->mAudioUri:Landroid/net/Uri;
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mImagesUri:Landroid/net/Uri;
 
     return-object v0
 .end method
 
-.method static synthetic access$1700(Landroid/media/MediaScanner;)Landroid/content/IContentProvider;
+.method static synthetic access$1700(Landroid/media/MediaScanner;)Landroid/net/Uri;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 107
-    iget-object v0, p0, Landroid/media/MediaScanner;->mMediaProvider:Landroid/content/IContentProvider;
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mAudioUri:Landroid/net/Uri;
 
     return-object v0
 .end method
@@ -1272,7 +1272,7 @@
     .parameter "x0"
 
     .prologue
-    .line 107
+    .line 110
     iget-boolean v0, p0, Landroid/media/MediaScanner;->mWasEmptyPriorToScan:Z
 
     return v0
@@ -1283,7 +1283,7 @@
     .parameter "x0"
 
     .prologue
-    .line 107
+    .line 110
     iget-boolean v0, p0, Landroid/media/MediaScanner;->mDefaultNotificationSet:Z
 
     return v0
@@ -1295,7 +1295,7 @@
     .parameter "x1"
 
     .prologue
-    .line 107
+    .line 110
     iput-boolean p1, p0, Landroid/media/MediaScanner;->mDefaultNotificationSet:Z
 
     return p1
@@ -1306,7 +1306,7 @@
     .parameter "x0"
 
     .prologue
-    .line 107
+    .line 110
     invoke-direct {p0}, Landroid/media/MediaScanner;->isDrmEnabled()Z
 
     move-result v0
@@ -1314,38 +1314,38 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Landroid/media/MediaScanner;)Ljava/lang/String;
+.method static synthetic access$2000(Landroid/media/MediaScanner;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 107
-    iget-object v0, p0, Landroid/media/MediaScanner;->mDefaultNotificationFilename:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2100(Landroid/media/MediaScanner;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 107
-    iget-boolean v0, p0, Landroid/media/MediaScanner;->mDefaultRingtoneSet:Z
+    .line 110
+    iget-boolean v0, p0, Landroid/media/MediaScanner;->mDefaultMmsSoundSet:Z
 
     return v0
 .end method
 
-.method static synthetic access$2102(Landroid/media/MediaScanner;Z)Z
+.method static synthetic access$2002(Landroid/media/MediaScanner;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 107
-    iput-boolean p1, p0, Landroid/media/MediaScanner;->mDefaultRingtoneSet:Z
+    .line 110
+    iput-boolean p1, p0, Landroid/media/MediaScanner;->mDefaultMmsSoundSet:Z
 
     return p1
+.end method
+
+.method static synthetic access$2100(Landroid/media/MediaScanner;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mDefaultNotificationFilename:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method static synthetic access$2200(Landroid/media/MediaScanner;)Ljava/lang/String;
@@ -1353,81 +1353,135 @@
     .parameter "x0"
 
     .prologue
-    .line 107
-    iget-object v0, p0, Landroid/media/MediaScanner;->mDefaultRingtoneFilename:Ljava/lang/String;
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mDefaultMmsSoundFilename:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$2300(Landroid/media/MediaScanner;)Z
+.method static synthetic access$2300()I
+    .locals 1
+
+    .prologue
+    .line 110
+    sget v0, Landroid/media/MediaScanner;->PHONE_COUNT:I
+
+    return v0
+.end method
+
+.method static synthetic access$2400(Landroid/media/MediaScanner;)[Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 107
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mDefaultRingtoneSet:[Z
+
+    return-object v0
+.end method
+
+.method static synthetic access$2500(Landroid/media/MediaScanner;)[Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mDefaultRingtoneFilename:[Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2600(Landroid/media/MediaScanner;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 110
     iget-boolean v0, p0, Landroid/media/MediaScanner;->mDefaultAlarmSet:Z
 
     return v0
 .end method
 
-.method static synthetic access$2302(Landroid/media/MediaScanner;Z)Z
+.method static synthetic access$2602(Landroid/media/MediaScanner;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 107
+    .line 110
     iput-boolean p1, p0, Landroid/media/MediaScanner;->mDefaultAlarmSet:Z
 
     return p1
 .end method
 
-.method static synthetic access$2400(Landroid/media/MediaScanner;)Ljava/lang/String;
+.method static synthetic access$2700(Landroid/media/MediaScanner;)Ljava/lang/String;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 107
+    .line 110
     iget-object v0, p0, Landroid/media/MediaScanner;->mDefaultAlarmAlertFilename:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$2500(Landroid/media/MediaScanner;)Landroid/content/Context;
+.method static synthetic access$2800(Landroid/media/MediaScanner;)Landroid/content/IContentProvider;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 107
+    .line 110
+    iget-object v0, p0, Landroid/media/MediaScanner;->mMediaProvider:Landroid/content/IContentProvider;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2900(Landroid/media/MediaScanner;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 110
     iget-object v0, p0, Landroid/media/MediaScanner;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
 
-.method static synthetic access$2600(Landroid/media/MediaScanner;)Landroid/drm/DrmManagerClient;
+.method static synthetic access$300(Landroid/media/MediaScanner;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 107
+    .line 110
+    iget-boolean v0, p0, Landroid/media/MediaScanner;->mCaseInsensitivePaths:Z
+
+    return v0
+.end method
+
+.method static synthetic access$3000(Landroid/media/MediaScanner;)Landroid/drm/DrmManagerClient;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 110
     iget-object v0, p0, Landroid/media/MediaScanner;->mDrmManagerClient:Landroid/drm/DrmManagerClient;
 
     return-object v0
 .end method
 
-.method static synthetic access$2602(Landroid/media/MediaScanner;Landroid/drm/DrmManagerClient;)Landroid/drm/DrmManagerClient;
+.method static synthetic access$3002(Landroid/media/MediaScanner;Landroid/drm/DrmManagerClient;)Landroid/drm/DrmManagerClient;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 107
+    .line 110
     iput-object p1, p0, Landroid/media/MediaScanner;->mDrmManagerClient:Landroid/drm/DrmManagerClient;
 
     return-object p1
 .end method
 
-.method static synthetic access$2700(Landroid/media/MediaScanner;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Landroid/content/ContentValues;I)Z
+.method static synthetic access$3100(Landroid/media/MediaScanner;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Landroid/content/ContentValues;I)Z
     .locals 1
     .parameter "x0"
     .parameter "x1"
@@ -1437,21 +1491,10 @@
     .parameter "x5"
 
     .prologue
-    .line 107
+    .line 110
     invoke-direct/range {p0 .. p5}, Landroid/media/MediaScanner;->addPlayListEntry(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Landroid/content/ContentValues;I)Z
 
     move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$300(Landroid/media/MediaScanner;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 107
-    iget-boolean v0, p0, Landroid/media/MediaScanner;->mCaseInsensitivePaths:Z
 
     return v0
 .end method

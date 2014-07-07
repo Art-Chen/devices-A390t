@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.system" android:versionCode="15" android:versionName="4.0.3-A390t_S125_130821" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
+<manifest android:sharedUserId="android.uid.system" android:versionCode="15" android:versionName="4.0.4-YINS_S_2.1.47.41" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <eat-comment />
     <protected-broadcast android:name="android.server.bluetoothservice.action.DISCOVERABLEALARM" />
@@ -274,7 +274,7 @@
     <permission android:label="@string/permlab_bindPackageVerifier" android:name="android.permission.BIND_PACKAGE_VERIFIER" android:protectionLevel="signature" android:description="@string/permdesc_bindPackageVerifier" />
     <uses-permission android:name="android.permission.CONFIRM_FULL_BACKUP" />
     <application android:label="@string/android_system_label" android:icon="@drawable/ic_launcher_android" android:allowClearUserData="false" android:hasCode="false" android:persistent="true" android:process="system" android:backupAgent="com.android.server.SystemBackupAgent" android:killAfterRestore="false">
-        <activity android:theme="@style/Theme.Holo.Light.Dialog.Alert" android:name="com.android.internal.app.ChooserActivity" android:multiprocess="true" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true">
+        <activity android:theme="@style/Theme.DeviceDefault.Light.Dialog.Alert" android:name="com.android.internal.app.ChooserActivity" android:multiprocess="true" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true">
             <intent-filter>
                 <action android:name="android.intent.action.CHOOSER" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -283,24 +283,24 @@
         <activity android:theme="@style/Theme.DeviceDefault.Light.Dialog" android:label="@string/heavy_weight_switcher_title" android:name="com.android.internal.app.HeavyWeightSwitcherActivity" android:process=":ui" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" />
         <activity android:theme="@style/Theme.Wallpaper.NoTitleBar.Fullscreen" android:name="com.android.internal.app.PlatLogoActivity" android:process=":ui" />
         <activity android:theme="@style/Theme.NoDisplay" android:name="com.android.internal.app.DisableCarModeActivity" android:process=":ui" android:excludeFromRecents="true" />
-        <activity android:theme="@style/Theme.Holo.Dialog.Alert" android:label="@string/android_system_label_ringtone" android:name="com.android.internal.app.RingtonePickerActivity" android:process=":ui" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity android:theme="@style/Theme.DeviceDefault.Light.DarkActionBar" android:icon="@drawable/ic_baidu_sound" android:name="com.yi.internal.app.RingtonePickerSystemActivity" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.RINGTONE_PICKER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:theme="@style/Theme.Holo.Dialog.Alert" android:label="@string/android_custom_label" android:name="com.android.internal.app.SdcardRingtonePickerActivity" android:process=":ui" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity android:theme="@style/Theme.DeviceDefault.Light.DarkActionBar" android:icon="@drawable/ic_baidu_sound" android:name="com.yi.internal.app.RingtonePickerCustomActivity" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
-                <action android:name="android.intent.action.RINGTONE_PICKER" />
+                <action android:name="yi.intent.action.RINGTONE_PICKER_CUSTOM" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:theme="@style/Theme.Holo.Dialog" android:label="@string/choose_account_label" android:name="android.accounts.ChooseAccountActivity" android:exported="true" android:process=":ui" android:excludeFromRecents="true" />
-        <activity android:theme="@style/Theme.Holo.DialogWhenLarge.NoActionBar" android:label="@string/choose_account_label" android:name="android.accounts.ChooseTypeAndAccountActivity" android:exported="true" android:process=":ui" android:excludeFromRecents="true" />
-        <activity android:theme="@style/Theme.Holo.DialogWhenLarge.NoActionBar" android:label="@string/choose_account_label" android:name="android.accounts.ChooseAccountTypeActivity" android:process=":ui" android:excludeFromRecents="true" />
-        <activity android:theme="@style/Theme.Holo.DialogWhenLarge" android:name="android.accounts.GrantCredentialsPermissionActivity" android:exported="true" android:process=":ui" android:excludeFromRecents="true" />
-        <activity android:theme="@style/Theme.Holo.Dialog" android:label="@string/sync_too_many_deletes" android:name="android.content.SyncActivityTooManyDeletes" android:process=":ui" />
-        <activity android:theme="@style/Theme.Dialog" android:name="com.android.server.ShutdownActivity" android:permission="android.permission.SHUTDOWN" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden">
+        <activity android:theme="@style/Theme.DeviceDefault.Light.Dialog" android:label="@string/choose_account_label" android:name="android.accounts.ChooseAccountActivity" android:exported="true" android:process=":ui" android:excludeFromRecents="true" />
+        <activity android:theme="@style/Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar" android:label="@string/choose_account_label" android:name="android.accounts.ChooseTypeAndAccountActivity" android:exported="true" android:process=":ui" android:excludeFromRecents="true" />
+        <activity android:theme="@style/Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar" android:label="@string/choose_account_label" android:name="android.accounts.ChooseAccountTypeActivity" android:process=":ui" android:excludeFromRecents="true" />
+        <activity android:theme="@style/Theme.DeviceDefault.Light.DialogWhenLarge" android:name="android.accounts.GrantCredentialsPermissionActivity" android:exported="true" android:excludeFromRecents="true" />
+        <activity android:theme="@style/Theme.DeviceDefault.Light.Dialog" android:label="@string/sync_too_many_deletes" android:name="android.content.SyncActivityTooManyDeletes" android:process=":ui" />
+        <activity android:name="com.android.server.ShutdownActivity" android:permission="android.permission.SHUTDOWN" android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_REQUEST_SHUTDOWN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -312,9 +312,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:theme="@style/Theme.Holo.Dialog.Alert" android:name="com.android.internal.app.NetInitiatedActivity" android:process=":ui" android:excludeFromRecents="true" />
-        <activity android:name="com.android.server.ShowStorage" android:excludeFromRecents="false" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
-        <activity android:theme="@style/Theme.Holo.Light" android:name="com.android.server.AppManage" android:excludeFromRecents="false" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@style/Theme.DeviceDefault.Light.Dialog.Alert" android:name="com.android.internal.app.NetInitiatedActivity" android:process=":ui" android:excludeFromRecents="true" />
         <receiver android:name="com.android.server.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

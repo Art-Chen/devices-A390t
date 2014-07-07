@@ -15,8 +15,6 @@
 
 
 # static fields
-.field public static final DELETE_USAGE_URI:Landroid/net/Uri; = null
-
 .field public static final FEEDBACK_URI:Landroid/net/Uri; = null
 
 .field public static final USAGE_TYPE:Ljava/lang/String; = "type"

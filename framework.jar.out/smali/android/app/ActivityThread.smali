@@ -7338,57 +7338,225 @@
     goto/16 :goto_0
 .end method
 
-# REPLACE:
-# This method is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
 .method public static main([Ljava/lang/String;)V
-    .locals 3
+    .locals 7
     .parameter "args"
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
     invoke-static {}, Lcom/android/internal/os/SamplingProfilerIntegration;->start()V
 
-    invoke-static {v2}, Ldalvik/system/CloseGuard;->setEnabled(Z)V
+    invoke-static {v5}, Ldalvik/system/CloseGuard;->setEnabled(Z)V
 
-    const-string v1, "<pre-initialized>"
+    const-string v4, "<pre-initialized>"
 
-    invoke-static {v1}, Landroid/os/Process;->setArgV0(Ljava/lang/String;)V
+    invoke-static {v4}, Landroid/os/Process;->setArgV0(Ljava/lang/String;)V
 
     invoke-static {}, Landroid/os/Looper;->prepareMainLooper()V
 
-    sget-object v1, Landroid/app/ActivityThread;->sMainThreadHandler:Landroid/os/Handler;
+    sget-object v4, Landroid/app/ActivityThread;->sMainThreadHandler:Landroid/os/Handler;
 
-    if-nez v1, :cond_0
+    if-nez v4, :cond_0
 
-    new-instance v1, Landroid/os/Handler;
+    new-instance v4, Landroid/os/Handler;
 
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+    invoke-direct {v4}, Landroid/os/Handler;-><init>()V
 
-    sput-object v1, Landroid/app/ActivityThread;->sMainThreadHandler:Landroid/os/Handler;
+    sput-object v4, Landroid/app/ActivityThread;->sMainThreadHandler:Landroid/os/Handler;
 
     :cond_0
-    new-instance v0, Landroid/app/ActivityThread;
+    new-instance v3, Landroid/app/ActivityThread;
 
-    invoke-direct {v0}, Landroid/app/ActivityThread;-><init>()V
+    invoke-direct {v3}, Landroid/app/ActivityThread;-><init>()V
 
-    .local v0, thread:Landroid/app/ActivityThread;
-    invoke-direct {v0, v2}, Landroid/app/ActivityThread;->attach(Z)V
+    .local v3, thread:Landroid/app/ActivityThread;
+    invoke-direct {v3, v5}, Landroid/app/ActivityThread;->attach(Z)V
 
-    invoke-static {v0}, Landroid/app/ActivityThread;->multiTheme_freeCanvas(Landroid/app/ActivityThread;)V
+    invoke-static {v3}, Landroid/app/ActivityThread;->multiTheme_freeCanvas(Landroid/app/ActivityThread;)V
 
+    :try_start_0
     invoke-static {}, Landroid/os/Looper;->loop()V
+    :try_end_0
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
-    new-instance v1, Ljava/lang/RuntimeException;
+    new-instance v4, Ljava/lang/RuntimeException;
 
-    const-string v2, "Main thread loop unexpectedly exited"
+    const-string v5, "Main thread loop unexpectedly exited"
 
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
+    throw v4
+
+    .line 4480
+    :catch_0
+    move-exception v1
+
+    .line 4481
+    .local v1, e:Ljava/lang/OutOfMemoryError;
+    invoke-static {}, Landroid/os/Debug;->isMonkeyOrDebug()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    .line 4482
+    invoke-virtual {v3}, Landroid/app/ActivityThread;->getProcessName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/os/Debug;->dumpHprof(Ljava/lang/String;)V
+
+    .line 4487
+    :goto_0
     throw v1
+
+    .line 4484
+    :cond_1
+    const-string v4, "ActivityThread"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Don\'t dump hprof file because it is not in monkey test! "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-static {}, Landroid/os/Debug;->isMonkey()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ", "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-static {}, Landroid/os/Debug;->isDebug()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 4488
+    .end local v1           #e:Ljava/lang/OutOfMemoryError;
+    :catch_1
+    move-exception v2
+
+    .line 4489
+    .local v2, e1:Ljava/lang/RuntimeException;
+    invoke-static {}, Landroid/os/Debug;->isMonkeyOrDebug()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    .line 4490
+    invoke-virtual {v2}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 4491
+    .local v0, cause:Ljava/lang/String;
+    if-eqz v0, :cond_2
+
+    const-string v4, "Caused by: java.lang.OutOfMemoryError"
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    .line 4492
+    invoke-virtual {v3}, Landroid/app/ActivityThread;->getProcessName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/os/Debug;->dumpHprof(Ljava/lang/String;)V
+
+    .line 4500
+    .end local v0           #cause:Ljava/lang/String;
+    :goto_1
+    throw v2
+
+    .line 4494
+    .restart local v0       #cause:Ljava/lang/String;
+    :cond_2
+    const-string v4, "ActivityThread"
+
+    const-string v5, "Don\'t dump hprof file because it is not OOM!"
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
+    .line 4497
+    .end local v0           #cause:Ljava/lang/String;
+    :cond_3
+    const-string v4, "ActivityThread"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Don\'t dump hprof file because it is not in monkey test! "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-static {}, Landroid/os/Debug;->isMonkey()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ", "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-static {}, Landroid/os/Debug;->isDebug()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
 .end method
 
 .method private final performConfigurationChanged(Landroid/content/ComponentCallbacks2;Landroid/content/res/Configuration;)V

@@ -32,6 +32,8 @@
 
 .field private static final sInstance:[Landroid/telephony/SmsManager;
 
+.field private static final sInstance:Landroid/telephony/SmsManager;
+
 
 # instance fields
 .field private mPhoneId:I
@@ -210,117 +212,6 @@
     return-object v3
 .end method
 
-.method public static getDefault()Landroid/telephony/SmsManager;
-    .locals 2
-
-    .prologue
-    .line 347
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->isMultiSim()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 348
-    sget-object v0, Landroid/telephony/SmsManager;->sInstance:[Landroid/telephony/SmsManager;
-
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getPhoneCount()I
-
-    move-result v1
-
-    aget-object v0, v0, v1
-
-    .line 350
-    :goto_0
-    return-object v0
-
-    :cond_0
-    sget-object v0, Landroid/telephony/SmsManager;->sInstance:[Landroid/telephony/SmsManager;
-
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    goto :goto_0
-.end method
-
-.method public static getDefault(I)Landroid/telephony/SmsManager;
-    .locals 2
-    .parameter "phoneId"
-
-    .prologue
-    .line 358
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getPhoneCount()I
-
-    move-result v0
-
-    if-lt p0, v0, :cond_0
-
-    .line 359
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "phoneId exceeds phoneCount"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 361
-    :cond_0
-    sget-object v0, Landroid/telephony/SmsManager;->sInstance:[Landroid/telephony/SmsManager;
-
-    aget-object v0, v0, p0
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public activateCellBroadcastSms(I)V
-    .locals 3
-    .parameter "activate"
-
-    .prologue
-    .line 629
-    :try_start_0
-    const-string v1, "isms"
-
-    iget v2, p0, Landroid/telephony/SmsManager;->mPhoneId:I
-
-    invoke-static {v1, v2}, Lcom/android/internal/telephony/PhoneFactory;->getServiceName(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
-
-    move-result-object v0
-
-    .line 630
-    .local v0, iccISms:Lcom/android/internal/telephony/ISms;
-    if-eqz v0, :cond_0
-
-    .line 631
-    invoke-interface {v0, p1}, Lcom/android/internal/telephony/ISms;->activateCellBroadcastSms(I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 636
-    .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 633
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-.end method
-
 .method public static getAllMessagesFromIcc()Ljava/util/ArrayList;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -420,6 +311,16 @@
     move-result v2
 
     goto :goto_0
+.end method
+
+.method public static getDefault()Landroid/telephony/SmsManager;
+    .locals 1
+
+    .prologue
+    .line 227
+    sget-object v0, Landroid/telephony/SmsManager;->sInstance:Landroid/telephony/SmsManager;
+
+    return-object v0
 .end method
 
 .method public copyMessageToIcc(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)Z

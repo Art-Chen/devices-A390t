@@ -231,6 +231,14 @@
     .end annotation
 .end method
 
+.method public abstract getIccPinPukRetryTimes()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getLteOnCdmaMode()I
     .annotation system Ldalvik/annotation/Throws;
         value = {

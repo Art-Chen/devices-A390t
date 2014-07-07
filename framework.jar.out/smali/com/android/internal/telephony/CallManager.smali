@@ -133,11 +133,6 @@
 
 .field protected final mIncomingRingVideoCallRegistrants:Landroid/os/RegistrantList;
 
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
 .field protected final mLineControlInfoRegistrants:Landroid/os/RegistrantList;
 
 .field protected final mMmiCompleteRegistrants:Landroid/os/RegistrantList;

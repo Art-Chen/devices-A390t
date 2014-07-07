@@ -517,11 +517,6 @@
     return-void
 .end method
 
-# REPLACE:
-# This method is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
 .method public sendMultipartText(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
     .locals 10
     .parameter "destAddr"

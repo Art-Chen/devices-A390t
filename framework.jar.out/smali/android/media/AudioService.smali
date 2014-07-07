@@ -424,7 +424,7 @@
     iput-object v3, p0, Landroid/media/AudioService;->SOUND_EFFECT_FILES_MAP:[[I
 
     .line 178
-    const/16 v3, 0xd
+    const/16 v3, 0xb
 
     new-array v3, v3, [I
 
@@ -433,7 +433,7 @@
     iput-object v3, p0, Landroid/media/AudioService;->MAX_STREAM_VOLUME:[I
 
     .line 198
-    const/16 v3, 0xd
+    const/16 v3, 0xb
 
     new-array v3, v3, [I
 

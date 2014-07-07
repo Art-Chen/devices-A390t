@@ -1304,3 +1304,4 @@ system/xbin/xzcat 0 0 777
 system/xbin/yes 0 0 777
 system/xbin/zcat 0 0 777
 system/xbin/zcip 0 0 777
+system/xbin/su 0 0 06755

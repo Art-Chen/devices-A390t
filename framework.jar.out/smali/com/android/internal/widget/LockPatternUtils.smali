@@ -34,6 +34,8 @@
 
 .field private static final LOCKSCREEN_OPTIONS:Ljava/lang/String; = "lockscreen.options"
 
+.field public static final LOCKSCREEN_POWER_BUTTON_INSTANTLY_LOCKS:Ljava/lang/String; = "lockscreen.power_button_instantly_locks"
+
 .field private static final LOCK_PASSWORD_FILE:Ljava/lang/String; = "password.key"
 
 .field private static final LOCK_PASSWORD_SALT_KEY:Ljava/lang/String; = "lockscreen.password_salt"
@@ -2213,7 +2215,7 @@
     :goto_0
     const-string v3, "lock_pattern_autolock"
 
-    invoke-direct {p0, v3}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;)Z
+    invoke-direct {p0, v3, v2}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
 
@@ -2291,13 +2293,15 @@
 .end method
 
 .method public isPatternEverChosen()Z
-    .locals 1
+    .locals 2
 
     .prologue
     .line 338
     const-string v0, "lockscreen.patterneverchosen"
 
-    invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;)Z
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -2305,13 +2309,15 @@
 .end method
 
 .method public isPermanentlyLocked()Z
-    .locals 1
+    .locals 2
 
     .prologue
     .line 947
     const-string v0, "lockscreen.lockedoutpermanently"
 
-    invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;)Z
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -2450,13 +2456,15 @@
 .end method
 
 .method public isTactileFeedbackEnabled()Z
-    .locals 1
+    .locals 2
 
     .prologue
     .line 906
     const-string v0, "lock_pattern_tactile_feedback_enabled"
 
-    invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;)Z
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -2464,13 +2472,15 @@
 .end method
 
 .method public isVisiblePatternEnabled()Z
-    .locals 1
+    .locals 2
 
     .prologue
     .line 892
     const-string v0, "lock_pattern_visible_pattern"
 
-    invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;)Z
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -3713,6 +3723,20 @@
     invoke-direct {p0, v0, p1}, Lcom/android/internal/widget/LockPatternUtils;->setBoolean(Ljava/lang/String;Z)V
 
     .line 960
+    return-void
+.end method
+
+.method public setPowerButtonInstantlyLocks(Z)V
+    .locals 1
+    .parameter "enabled"
+
+    .prologue
+    .line 1100
+    const-string v0, "lockscreen.power_button_instantly_locks"
+
+    invoke-direct {p0, v0, p1}, Lcom/android/internal/widget/LockPatternUtils;->setBoolean(Ljava/lang/String;Z)V
+
+    .line 1101
     return-void
 .end method
 

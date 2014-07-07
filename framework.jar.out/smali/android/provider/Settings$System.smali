@@ -51,40 +51,15 @@
 
 .field public static final AVALIABLE_CARD_COUNTS:Ljava/lang/String; = "avaliable_cards_counts"
 
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
-.field public static final BATTERY_LIGHT_PULSE:Ljava/lang/String; = "battery_light_pulse"
+.field public static final BATTERY_LIGHT_ENABLED:Ljava/lang/String; = "battery_light_enabled"
 
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
-.field public static final BATTERY_LIGHT_MEDIUM_COLOR:Ljava/lang/String; = "battery_light_medium_color"
-
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
-.field public static final BATTERY_LIGHT_LOW_COLOR:Ljava/lang/String; = "battery_light_low_color"
-
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
 .field public static final BATTERY_LIGHT_FULL_COLOR:Ljava/lang/String; = "battery_light_full_color"
 
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
-.field public static final BATTERY_LIGHT_ENABLED:Ljava/lang/String; = "battery_light_enabled"
+.field public static final BATTERY_LIGHT_LOW_COLOR:Ljava/lang/String; = "battery_light_low_color"
+
+.field public static final BATTERY_LIGHT_MEDIUM_COLOR:Ljava/lang/String; = "battery_light_medium_color"
+
+.field public static final BATTERY_LIGHT_PULSE:Ljava/lang/String; = "battery_light_pulse"
 
 .field public static final BLUETOOTH_DISCOVERABILITY:Ljava/lang/String; = "bluetooth_discoverability"
 
@@ -408,11 +383,6 @@
 
 .field public static final VOLUME_RESERVE_2:Ljava/lang/String; = "volume_reserve_2"
 
-# ADD:
-# This field is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
 .field public static final VOLUME_REVOKE:Ljava/lang/String; = "volume_revoke"
 
 .field public static final VOLUME_RING:Ljava/lang/String; = "volume_ring"
@@ -549,11 +519,6 @@
 
 
 # direct methods
-# REPLACE:
-# This method is replaced to bosp at 2014-06-27 20:40
-#
-# @action: make autofix
-# @author: xinyuan
 .method static constructor <clinit>()V
     .locals 8
 
@@ -582,204 +547,245 @@
 
     sput-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
+    .line 768
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "adb_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 769
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "android_id"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 770
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "bluetooth_on"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 771
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "data_roaming"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 772
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "device_provisioned"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 773
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "http_proxy"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 774
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "install_non_market_apps"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 775
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "location_providers_allowed"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 776
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "lock_pattern_autolock"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 777
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "lock_pattern_visible_pattern"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 778
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "lock_pattern_tactile_feedback_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 779
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
     const-string v1, "logging_id"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 780
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "parental_control_enabled"
+    const-string/jumbo v1, "parental_control_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 781
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "parental_control_last_update"
+    const-string/jumbo v1, "parental_control_last_update"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 782
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "parental_control_redirect_url"
+    const-string/jumbo v1, "parental_control_redirect_url"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 783
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "settings_classname"
+    const-string/jumbo v1, "settings_classname"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 784
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "usb_mass_storage_enabled"
+    const-string/jumbo v1, "usb_mass_storage_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 785
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "use_google_mail"
+    const-string/jumbo v1, "use_google_mail"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 787
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_networks_available_notification_on"
+    const-string/jumbo v1, "wifi_auto_connect"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 789
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_networks_available_repeat_delay"
+    const-string/jumbo v1, "wifi_networks_available_notification_on"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 790
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_num_open_networks_kept"
+    const-string/jumbo v1, "wifi_networks_available_repeat_delay"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 791
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_on"
+    const-string/jumbo v1, "wifi_num_open_networks_kept"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 792
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_acceptable_packet_loss_percentage"
+    const-string/jumbo v1, "wifi_on"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 793
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_ap_count"
+    const-string/jumbo v1, "wifi_watchdog_acceptable_packet_loss_percentage"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 794
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_background_check_delay_ms"
+    const-string/jumbo v1, "wifi_watchdog_ap_count"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 795
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_background_check_enabled"
+    const-string/jumbo v1, "wifi_watchdog_background_check_delay_ms"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 796
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_background_check_timeout_ms"
+    const-string/jumbo v1, "wifi_watchdog_background_check_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 797
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_initial_ignored_ping_count"
+    const-string/jumbo v1, "wifi_watchdog_background_check_timeout_ms"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 798
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_max_ap_checks"
+    const-string/jumbo v1, "wifi_watchdog_initial_ignored_ping_count"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 799
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_on"
+    const-string/jumbo v1, "wifi_watchdog_max_ap_checks"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 800
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_ping_count"
+    const-string/jumbo v1, "wifi_watchdog_on"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 801
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_ping_delay_ms"
+    const-string/jumbo v1, "wifi_watchdog_ping_count"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 802
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string v1, "wifi_watchdog_ping_timeout_ms"
+    const-string/jumbo v1, "wifi_watchdog_ping_delay_ms"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    .line 803
+    sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
+
+    const-string/jumbo v1, "wifi_watchdog_ping_timeout_ms"
+
+    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    .line 1124
     const-string v0, "content://settings/system"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -788,45 +794,71 @@
 
     sput-object v0, Landroid/provider/Settings$System;->CONTENT_URI:Landroid/net/Uri;
 
-    const/4 v0, 0x7
+    .line 1564
+    const/16 v0, 0xb
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string v1, "volume_voice"
+    const-string/jumbo v1, "volume_voice"
 
     aput-object v1, v0, v3
 
-    const-string v1, "volume_system"
+    const-string/jumbo v1, "volume_system"
 
     aput-object v1, v0, v4
 
-    const-string v1, "volume_ring"
+    const-string/jumbo v1, "volume_ring"
 
     aput-object v1, v0, v5
 
-    const-string v1, "volume_music"
+    const-string/jumbo v1, "volume_music"
 
     aput-object v1, v0, v6
 
-    const-string v1, "volume_alarm"
+    const-string/jumbo v1, "volume_alarm"
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    const-string v2, "volume_notification"
+    const-string/jumbo v2, "volume_notification"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    const-string v2, "volume_bluetooth_sco"
+    const-string/jumbo v2, "volume_bluetooth_sco"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    const-string/jumbo v2, "volume_fm"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    const-string/jumbo v2, "volume_reserve_1"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    const-string/jumbo v2, "volume_reserve_2"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    const-string/jumbo v2, "volume_system_enforced"
 
     aput-object v2, v0, v1
 
     sput-object v0, Landroid/provider/Settings$System;->VOLUME_SETTINGS:[Ljava/lang/String;
 
-    const-string v0, "ringtone"
+    .line 1596
+    const-string/jumbo v0, "ringtone"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -852,7 +884,7 @@
 
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
-    const/16 v0, 0x3d
+    const/16 v0, 0x42
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -908,305 +940,323 @@
 
     const/16 v1, 0xa
 
-    const-string v2, "screen_off_timeout"
+    const-string/jumbo v2, "screen_off_timeout"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    const-string v2, "screen_brightness"
+    const-string/jumbo v2, "screen_brightness"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    const-string v2, "screen_brightness_mode"
+    const-string/jumbo v2, "screen_brightness_mode"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    const-string v2, "vibrate_on"
+    const-string/jumbo v2, "vibrate_on"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    const-string v2, "mode_ringer"
+    const-string/jumbo v2, "mode_ringer"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
-    const-string v2, "mode_ringer_streams_affected"
+    const-string/jumbo v2, "mode_ringer_streams_affected"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x10
 
-    const-string v2, "mute_streams_affected"
+    const-string/jumbo v2, "mute_streams_affected"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x11
 
-    const-string v2, "volume_voice"
+    const-string/jumbo v2, "volume_voice"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    const-string v2, "volume_system"
+    const-string/jumbo v2, "volume_system"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x13
 
-    const-string v2, "volume_ring"
+    const-string/jumbo v2, "volume_ring"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x14
 
-    const-string v2, "volume_music"
+    const-string/jumbo v2, "volume_music"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x15
 
-    const-string v2, "volume_alarm"
+    const-string/jumbo v2, "volume_alarm"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x16
 
-    const-string v2, "volume_notification"
+    const-string/jumbo v2, "volume_notification"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x17
 
-    const-string v2, "volume_bluetooth_sco"
+    const-string/jumbo v2, "volume_bluetooth_sco"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x18
 
-    const-string v2, "volume_voice_last_audible"
+    const-string/jumbo v2, "volume_voice_last_audible"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x19
 
-    const-string v2, "volume_system_last_audible"
+    const-string/jumbo v2, "volume_system_last_audible"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1a
 
-    const-string v2, "volume_ring_last_audible"
+    const-string/jumbo v2, "volume_ring_last_audible"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1b
 
-    const-string v2, "volume_music_last_audible"
+    const-string/jumbo v2, "volume_music_last_audible"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1c
 
-    const-string v2, "volume_alarm_last_audible"
+    const-string/jumbo v2, "volume_alarm_last_audible"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1d
 
-    const-string v2, "volume_notification_last_audible"
+    const-string/jumbo v2, "volume_notification_last_audible"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1e
 
-    const-string v2, "volume_bluetooth_sco_last_audible"
+    const-string/jumbo v2, "volume_bluetooth_sco_last_audible"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1f
 
-    const-string v2, "vibrate_in_silent"
+    const-string/jumbo v2, "vibrate_in_silent"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x20
 
-    const-string v2, "auto_replace"
+    const-string/jumbo v2, "sms_validity"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x21
 
-    const-string v2, "auto_caps"
+    const-string/jumbo v2, "sms_validity_sim2"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x22
 
-    const-string v2, "auto_punctuate"
+    const-string v2, "auto_replace"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x23
 
-    const-string/jumbo v2, "show_password"
+    const-string v2, "auto_caps"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x24
 
-    const-string v2, "auto_time"
+    const-string v2, "auto_punctuate"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x25
 
-    const-string v2, "auto_time_zone"
+    const-string/jumbo v2, "show_password"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x26
 
-    const-string/jumbo v2, "time_12_24"
+    const-string v2, "auto_time"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x27
 
-    const-string v2, "date_format"
+    const-string v2, "auto_time_zone"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x28
 
-    const-string v2, "accelerometer_rotation"
+    const-string/jumbo v2, "time_12_24"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x29
 
-    const-string/jumbo v2, "user_rotation"
+    const-string v2, "date_format"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2a
 
-    const-string v2, "dtmf_tone"
+    const-string v2, "accelerometer_rotation"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2b
 
-    const-string v2, "dtmf_tone_type"
+    const-string/jumbo v2, "user_rotation"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2c
 
-    const-string v2, "emergency_tone"
+    const-string v2, "dtmf_tone"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2d
 
-    const-string v2, "call_auto_retry"
+    const-string v2, "dtmf_tone_type"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2e
 
-    const-string v2, "hearing_aid"
+    const-string v2, "emergency_tone"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2f
 
-    const-string v2, "tty_mode"
+    const-string v2, "call_auto_retry"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x30
 
-    const-string v2, "sound_effects_enabled"
+    const-string v2, "hearing_aid"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x31
 
-    const-string v2, "haptic_feedback_enabled"
+    const-string/jumbo v2, "tty_mode"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x32
 
-    const-string/jumbo v2, "power_sounds_enabled"
+    const-string/jumbo v2, "sound_effects_enabled"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x33
 
-    const-string v2, "dock_sounds_enabled"
+    const-string v2, "haptic_feedback_enabled"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x34
 
-    const-string v2, "lockscreen_sounds_enabled"
+    const-string/jumbo v2, "power_sounds_enabled"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x35
 
-    const-string v2, "show_web_suggestions"
+    const-string v2, "dock_sounds_enabled"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x36
 
-    const-string v2, "notification_light_pulse"
+    const-string v2, "lockscreen_sounds_enabled"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x37
 
-    const-string v2, "sip_call_options"
+    const-string v2, "show_web_suggestions"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x38
 
-    const-string v2, "sip_receive_calls"
+    const-string v2, "notification_light_pulse"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x39
 
-    const-string v2, "pointer_speed"
+    const-string v2, "sip_call_options"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3a
 
-    const-string v2, "volume_revoke"
+    const-string v2, "sip_receive_calls"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3b
 
-    const-string v2, "prevent_wakeup"
+    const-string v2, "pointer_speed"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x3c
+
+    const-string v2, "wifi_cellular_wlan"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x3d
+
+    const-string v2, "volume_revoke"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x3e
+
+    const-string v2, "prevent_wakeup"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x40
 
     const-string v2, "auto_brightness_coe"
 

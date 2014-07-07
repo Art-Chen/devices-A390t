@@ -61,7 +61,7 @@ vendor_saved_apps := Bluetooth
 # you need decode FMRadio.apk to the project directory (use apktool d FMRadio.apk) first
 # then you can make it by:   make FMRadio
 #-----------------------------------------------------------------------------
-# vendor_modify_apps := FMRadio
+# vendor_modify_apps := MediaProvider
 
 ##############################################################################
 # Jars build from current project root directory
@@ -100,7 +100,7 @@ vendor_modify_jars := framework services
 # baidu_modify_apps: which base the baidu's apk
 # just override the res, append *.smali.part
 #-----------------------------------------------------------------------------
-baidu_modify_apps := Phone
+baidu_modify_apps := Phone SystemUI
 
 ##############################################################################
 # baidu_modify_jars: which base the baidu's jar
