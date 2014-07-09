@@ -284,12 +284,12 @@
     .parameter "pid"
 
     .prologue
-    .line 749
+    invoke-static {p0}, Landroid/os/Process;->killChildProcess(I)V
+
     const/16 v0, 0x9
 
     invoke-static {p0, v0}, Landroid/os/Process;->sendSignalQuiet(II)V
 
-    .line 750
     return-void
 .end method
 
@@ -1139,4 +1139,138 @@
     invoke-static {v6, v7, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_1
+.end method
+
+.method public static final getChildPid(I)[I
+    .locals 9
+    .parameter "pid"
+
+    .prologue
+    const/4 v8, -0x1
+
+    const/4 v4, 0x0
+
+    .local v4, pids:[I
+    const/4 v5, 0x0
+
+    .local v5, result:I
+    const-string v7, "/proc"
+
+    invoke-static {v7, v4}, Landroid/os/Process;->getPids(Ljava/lang/String;[I)[I
+
+    move-result-object v4
+
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_0
+    array-length v7, v4
+
+    if-ge v1, v7, :cond_2
+
+    aget v0, v4, v1
+
+    .local v0, curPid:I
+    if-eq v0, v8, :cond_0
+
+    invoke-static {v0}, Landroid/os/Process;->getParentPid(I)I
+
+    move-result v7
+
+    if-eq v7, p0, :cond_1
+
+    :cond_0
+    aput v8, v4, v1
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    .end local v0           #curPid:I
+    :cond_2
+    new-array v6, v5, [I
+
+    .local v6, ret:[I
+    const/4 v2, 0x0
+
+    .local v2, j:I
+    const/4 v1, 0x0
+
+    :goto_2
+    array-length v7, v4
+
+    if-ge v1, v7, :cond_4
+
+    aget v7, v4, v1
+
+    if-eq v7, v8, :cond_3
+
+    add-int/lit8 v3, v2, 0x1
+
+    .end local v2           #j:I
+    .local v3, j:I
+    aget v7, v4, v1
+
+    aput v7, v6, v2
+
+    move v2, v3
+
+    .end local v3           #j:I
+    .restart local v2       #j:I
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    return-object v6
+.end method
+
+.method public static killChildProcess(I)V
+    .locals 6
+    .parameter "parentPid"
+
+    .prologue
+    invoke-static {p0}, Landroid/os/Process;->getChildPid(I)[I
+
+    move-result-object v1
+
+    .local v1, childPids:[I
+    move-object v0, v1
+
+    .local v0, arr$:[I
+    array-length v4, v0
+
+    .local v4, len$:I
+    const/4 v3, 0x0
+
+    .local v3, i$:I
+    :goto_0
+    if-ge v3, v4, :cond_1
+
+    aget v2, v0, v3
+
+    .local v2, currPid:I
+    const/4 v5, -0x1
+
+    if-eq v2, v5, :cond_0
+
+    const/16 v5, 0x9
+
+    invoke-static {v2, v5}, Landroid/os/Process;->sendSignalQuiet(II)V
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    .end local v2           #currPid:I
+    :cond_1
+    return-void
 .end method

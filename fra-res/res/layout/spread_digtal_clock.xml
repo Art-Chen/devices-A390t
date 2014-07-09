@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?textAppearanceMedium" android:textSize="@dimen/spread_date_size" android:gravity="left" android:layout_gravity="left" android:id="@id/spread_date" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="12.0dip" />
+    <com.android.internal.widget.DigitalClock android:id="@id/spread_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="12.0dip" android:layout_toRightOf="@id/spread_date">
+        <TextView android:textAppearance="?textAppearanceMedium" android:textSize="@dimen/spread_time_size" android:ellipsize="none" android:gravity="center" android:id="@id/timeDisplayBackground" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginBottom="6.0dip" android:singleLine="true" />
+        <TextView android:textAppearance="?textAppearanceMedium" android:textSize="@dimen/spread_time_size" android:ellipsize="none" android:gravity="center" android:id="@id/timeDisplayForeground" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginBottom="6.0dip" android:singleLine="true" android:layout_alignLeft="@id/timeDisplayBackground" android:layout_alignTop="@id/timeDisplayBackground" />
+    </com.android.internal.widget.DigitalClock>
+</RelativeLayout>

@@ -11340,7 +11340,9 @@
     .prologue
     const/4 v3, 0x0
 
-    iget-boolean v4, p1, Lcom/android/server/am/ActivityRecord;->noDisplay:Z
+    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
+
+    move-result v4
 
     if-eqz v4, :cond_1
 
@@ -11349,6 +11351,10 @@
     return-object v3
 
     :cond_1
+    iget-boolean v4, p1, Lcom/android/server/am/ActivityRecord;->noDisplay:Z
+
+    if-nez v4, :cond_0
+
     iget-object v4, p0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v4, v4, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
